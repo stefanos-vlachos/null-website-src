@@ -29,6 +29,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
 
         .branding {
@@ -57,7 +58,58 @@
             letter-spacing: 0.02em;
             font-weight: 300;
             opacity: 0.8;
-            max-width: 300px;
+            max-width: 320px;
+            margin-bottom: 32px;
+        }
+
+        /* Email Form Container */
+        .email-form {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .email-input {
+            flex: 1;
+            background-color: transparent;
+            border: 1px solid rgba(230, 237, 243, 0.3);
+            border-radius: 4px;
+            padding: 12px 16px;
+            color: #E6EDF3;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .email-input:focus {
+            border-color: #E6EDF3;
+        }
+
+        .email-input::placeholder {
+            color: rgba(230, 237, 243, 0.4);
+        }
+
+        .submit-btn {
+            background-color: #E6EDF3;
+            color: #121212;
+            border: none;
+            border-radius: 4px;
+            padding: 0 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 480px) {
+            .logo-text { font-size: 3rem; }
+            .email-form { flex-direction: column; gap: 12px; }
+            .submit-btn { padding: 12px 0; }
         }
     </style>
 </head>
@@ -70,8 +122,20 @@
         </div>
         
         <div class="status-message">
-            Universe is currently under construction
+            Universe is currently under construction. Leave your email to be notified when the map launches.
         </div>
+
+        <form class="email-form" action="https://formspree.io/f/mvzyjljr" method="POST">
+            <input 
+                type="email" 
+                name="email" 
+                class="email-input" 
+                placeholder="Enter your email address" 
+                required
+                autocomplete="off"
+            >
+            <button type="submit" class="submit-btn">Join</button>
+        </form>
     </div>
 
 </body>
